@@ -11,12 +11,12 @@ body {
 	position: absolute;
 	width: 100%;
 	height: 20%;
-	background: #AAAAAA;
+	background: #F0F0F0;
 }
 #headline h1 {
 	font-size: 100px;
 	text-align: center;
-	color: #FF6633;
+	color: #FFCCFF;
 }
 #slider {
 	position: absolute;
