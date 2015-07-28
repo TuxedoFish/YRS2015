@@ -1,23 +1,48 @@
 <html>
 <head>
-	<title></title>
+	<title>Newspaper Discovery</title>
 	<link rel="stylesheet" type="text/css" href="../css/main.css" >
 	<script src="../library/jquery-2.0.3.min.js"></script>
 	<script src="../library/jquery.transit.min.js"></script>
 	<script src = "http://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.js"></script>
-	<script src="../javascript/getarticle.js"></script>
+	<script src="../javascript/buttonslogic.js"></script>
 </head>
+
+<script>
+
+</script>
 
 <body>
 	<!--contains the website within a box-->
-	<div id="container">
+	<div id="container" ng-app="logic" ng-controller="logiccontroller">
 		<div id="headline">
 			<h1>
-				Which paper do you read the most?
+				Which of these sources would you trust?
 			</h1>
 		</div>
-		<div class="slider">
-		
+		<div class="icon">
+			<img src="../images/guardian.png"  height="200" width="200">
+			<br> The Guardian
+		</div>
+		<div class="icon" style="left: 40%;">
+			<img src="../images/bbc.png"  height="200" width="200">
+			<br> BBC news
+		</div>
+		<div class="icon" style="left: 78%;">
+			<img src="../images/telegraph.jpg"  height="200" width="200">
+			<br> The Telegraph
+		</div>
+		<div class="icon" style="top: 61%;">
+			<img src="../images/daily mail.jpg"  height="200" width="200">
+			<br> Daily mail
+		</div>
+		<div class="icon" style="left: 40%; top: 61%;">
+			<img src="../images/the sun.jpg"  height="200" width="200">
+			<br> The sun
+		</div>
+		<div class="icon" style="left: 78%; top: 61%;">
+			<img src="../images/the times.png"  height="200" width="200">
+			<br> The Times
 		</div>
 	</div>
 </body>
