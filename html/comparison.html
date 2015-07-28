@@ -7,32 +7,56 @@
 <script src="../library/jquery-2.0.3.min.js"></script>
 <script src="../library/jquery.transit.min.js"></script>
 <script src = "http://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.js"></script>
+<script src="../javascript/getarticle.js"></script>
 </head>
 
 <body>
 
-<div id="container" ng-app="quiz" ng-controller="quizcontroller">
+<script>
+getArticle(0, "the guardian", function(link) {
+	getUrl(link, function(data) {
+		var title = data.objects[0].title;
+		var text = data.objects[0].text;
+		textsentences = text.split(".", 15);
+		text = textsentences.toString().concat(".");
+		$('#headlineB').text(title);
+		$('#textB').text(text);
+	});
+});
+getArticle(0, "the sun", function(link) {
+	getUrl(link, function(data) {
+		var title = data.objects[0].title;
+		var text = data.objects[0].text;
+		textsentences = text.split(".", 15);
+		text = textsentences.toString().concat(".");
+		$('#headlineA').text(title);
+		$('#textA').text(text);
+	});
+});
+</script>
+
+<div id="container">
   <div id="headline">
     <h1>
-      Thing being compared
+      Which of these is a fairer representation?
     </h1>
   </div>
 
 
-<div id="textbox1">
-  <div id ="headlineA">
+<div class="textbox" id ="textbox1">
+  <div class="tagline" id ="headlineA">
     Headline A
   </div>
-  <div id ="textA">
+  <div class="text" id ="textA">
     Text text text text text text
   </div>
 </div>
 
-<div id="textbox2">
-  <div id ="headlineB">
+<div class="textbox" id ="textbox2">
+  <div class="tagline" id ="headlineB">
     Headline B
   </div>
-  <div id ="textB">
+  <div class="text" id ="textB">
     Text text text text text text
   </div>
 </div>
