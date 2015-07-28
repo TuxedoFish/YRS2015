@@ -1,7 +1,7 @@
 #container {
 	position: absolute;
 	width: 100%;
-	height: 100%;
+	min-height: 100%;
 	background: #F0F0F0;
 }
 body {
@@ -17,30 +17,39 @@ body {
 	font-size: 550%;
 	text-align: center;
 	color: #000000;
+	font-family: Tahoma, Geneva, sans-serif;
+	
 }
 
 #sidebar {
-	position: relative;
+	position: absolute;
 	float :left;
 	border-radius: 25px;
-	margin-top: 10%;
+	margin-top: 12%;
 	font-size: 200%;
+	padding-left: 1%;
 	background: #DFDCE3;
 	width: 25%;
 	height: 80%;
 	font-family: Tahoma, Geneva, sans-serif;
+	border-style: solid;
+  border-width: 1px;
+	border-color: #ACA1E3;
 }
 
 #newsfeed {
-	position: relative;
-	float :right;
-	margin-right: 2%;
+	position: absolute;
+	left: 27%;
+	margin-right: 50%;
 	border-radius: 25px;
-	top : 20%;
+	top : 24%;
 	width: 70%;
 	height: 80%;
 	background: #DFDCE3;
 	padding-left: 1%;
 	font-size: 200%;
 	font-family: Tahoma, Geneva, sans-serif;
+	border-style: solid;
+  border-width: 1px;
+	border-color: #ACA1E3;
 }
