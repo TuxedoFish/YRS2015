@@ -2,7 +2,7 @@
 	position: absolute;
 	width: 100%;
 	height: 100%;
-	background: #DEDEDE;
+	background: #F0F0F0;
 }
 body {
 	margin: 0px;
@@ -18,9 +18,29 @@ body {
 	text-align: center;
 	color: #000000;
 }
-#slider {
-	position: absolute;
-	width: 100%;
+
+#sidebar {
+	position: relative;
+	float :left;
+	border-radius: 25px;
+	margin-top: 10%;
+	font-size: 200%;
+	background: #DFDCE3;
+	width: 25%;
 	height: 80%;
-	text-align: center;
+	font-family: Tahoma, Geneva, sans-serif;
+}
+
+#newsfeed {
+	position: relative;
+	float :right;
+	margin-right: 2%;
+	border-radius: 25px;
+	top : 20%;
+	width: 70%;
+	height: 80%;
+	background: #DFDCE3;
+	padding-left: 1%;
+	font-size: 200%;
+	font-family: Tahoma, Geneva, sans-serif;
 }
