@@ -1,33 +1,20 @@
-<html>
+<!doctype html>
 <head>
 	<title></title>
 	<link rel="stylesheet" type="text/css" href="../css/main.css" >
 	<script src="../library/jquery-2.0.3.min.js"></script>
 	<script src="../library/jquery.transit.min.js"></script>
 	<script src = "http://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.js"></script>
-	<script src="../javascript/getarticle.js"></script>
 </head>
-
-<script>
-getArticle(0, "BBC", function(link) {
-	getUrl(link);
-});
-</script>
 
 <body>
 	<!--contains the website within a box-->
-	<div id="container">
+	<div id="container" ng-app="quiz" ng-controller="quizcontroller">
 		<div id="headline">
 			<h1>
-				Which paper do you read the most?
+				Your feed
 			</h1>
 		</div>
-		<div class="slider">
-		
-		</div>
-	</div>
-</body>
-</html>
 		<div id="slider">
 
 		</div>
