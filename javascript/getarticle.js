@@ -1,12 +1,26 @@
-function getUrl(url) {
+function getUrl(url, callback) {
 	$.ajax({
-		url: url,
+		url: 'http://api.diffbot.com/v3/article?token=14bc76d1b7868c3feca9e6be884d5e1c&url='.concat(url),
 		type: 'GET',
 		data: 'json'
 		
 		}).done(function ( data ) {
-			var title = data.objects[0].title;
-			var text = data.objects[0].text;
-			$('.slider').append(text);
+			callback(data);
 		});
+}
+function getArticle(number, newspaper, callback) { 
+	var link = "i am here";
+	$.ajax({
+		url: "../json/links.json",
+		type: 'GET',
+		data: 'json'
+		
+		}).done(function ( data ) {
+			link = data.topics[number][newspaper];
+			$('.slider').append(link);
+			callback(link);
+		}).error(function ( data ) {
+			console.log(data + "fail");
+		});
+	return link;
 }

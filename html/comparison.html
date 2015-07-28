@@ -13,32 +13,67 @@
 <body>
 
 <script>
-getArticle(0, "the guardian", function(link) {
-	getUrl(link, function(data) {
-		var title = data.objects[0].title;
-		var text = data.objects[0].text;
-		textsentences = text.split(".", 15);
-		text = textsentences.toString().concat(".");
-		$('#headlineB').text(title);
-		$('#textB').text(text);
-	});
+var position="loading";
+
+resetTexts();
+
+$(document).ready(function() {
+$( "#textbox1" ).click(function() {
+	if(position != "loading" && position != "1up" && position != "2up") {
+		console.log(position);
+		position="1up";
+		console.log("clicked");
+		$( this ).slideUp();
+		resetTexts();
+	}
 });
-getArticle(0, "the sun", function(link) {
-	getUrl(link, function(data) {
-		var title = data.objects[0].title;
-		var text = data.objects[0].text;
-		textsentences = text.split(".", 15);
-		text = textsentences.toString().concat(".");
-		$('#headlineA').text(title);
-		$('#textA').text(text);
-	});
+$( "#textbox2" ).click(function() {
+	if(position != "loading" && position != "1up" && position != "2up") {
+		console.log(position);
+		position="2up";
+		console.log("clicked");
+		$( this ).slideUp();
+		resetTexts();
+	}
 });
+});
+function resetTexts() {
+	getArticle(0, "the guardian", function(link) {
+		getUrl(link, function(data) {
+			var title = data.objects[0].title;
+			var text = data.objects[0].text;
+			textsentences = text.split(".", 15);
+			text = textsentences.toString().concat(".");
+			$('#headlineB').text(title);
+			$('#textB').text(text);
+			
+			if(position="2up") {
+				$( "#textbox2" ).slideDown();
+			}
+		});
+	});
+	getArticle(0, "the sun", function(link) {
+		getUrl(link, function(data) {
+			var title = data.objects[0].title;
+			var text = data.objects[0].text;
+			textsentences = text.split(".", 15);
+			text = textsentences.toString().concat(".");
+			$('#headlineA').text(title);
+			$('#textA').text(text);
+			
+			if(position="1up") {
+				$( "textbox1" ).slideDown();
+			}
+			position = "loaded";
+		});
+	});
+}
 </script>
 
 <div id="container">
   <div id="headline">
     <h1>
-      Which of these is a fairer representation?
+      Which of these do you agree with?
     </h1>
   </div>
 
