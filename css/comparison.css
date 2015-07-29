@@ -5,9 +5,10 @@
 	background: #ACFFFF;
 }
 
-body { 
+body {
 	padding: 0px;
 	margin: 0px;
+	background-image: url("../images/newspaper.png");
 }
 
 #headline {
@@ -21,7 +22,7 @@ body {
 #headline h1 {
 	font-size: 100px;
 	text-align: center ;
-	color: #C4FCFB;
+	color: #FFF;
     font-size: 500%;
     font-family: Tahoma, Geneva, sans-serif;
 }
