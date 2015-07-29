@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Newspaper Discovery</title>
+
+<link rel="stylesheet" type="text/css" href="../css/comparison.css" >
+<script src="../library/jquery-2.0.3.min.js"></script>
+<script src="../library/jquery.transit.min.js"></script>
+<script src = "http://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.js"></script>
+<script src="../javascript/getarticle.js"></script>
+</head>
+
+<body>
+
+<script>
+var position="loading";
+
+var newspapers = ["bbc", "daily mail", "guardian", "telegraph", "the sun", "the times"];
+
+resetTexts();
+
+$(document).ready(function() {
+$( "#textbox1" ).click(function() {
+	if(position != "loading" && position != "1up" && position != "2up") {
+		console.log(position);
+		position="1up";
+		console.log("clicked");
+		$( this ).slideUp();
+		resetTexts();
+	}
+});
+$( "#textbox2" ).click(function() {
+	if(position != "loading" && position != "1up" && position != "2up") {
+		console.log(position);
+		position="2up";
+		console.log("clicked");
+		$( this ).slideUp();
+		resetTexts();
+	}
+});
+});
+function resetTexts() {
+	var article = Math.round(Math.random()*2);
+	
+	getArticle(article, newspapers[Math.round(Math.random()*5)], function(link) {
+		getUrl(link, function(data) {
+			console.log(link);
+			var title = data.objects[0].title;
+			var text = data.objects[0].text;
+			textsentences = text.split(".", 15);
+			text = textsentences.toString().concat(".");
+			$('#headlineB').text(title);
+			$('#textB').text(text);
+			
+			if(position="2up") {
+				$( "#textbox2" ).slideDown();
+			}
+		});
+	});
+	getArticle(article, newspapers[Math.round(Math.random()*5)], function(link) {
+		getUrl(link, function(data) {
+			console.log(link);
+			var title = data.objects[0].title;
+			var text = data.objects[0].text;
+			textsentences = text.split(".", 15);
+			text = textsentences.toString().concat(".");
+			$('#headlineA').text(title);
+			$('#textA').text(text);
+			
+			if(position="1up") {
+				$( "textbox1" ).slideDown();
+			}
+			position = "loaded";
+		});
+	});
+}
+</script>
+
+<div id="container">
+  <div id="headline">
+    <h1>
+      Which of these do you agree with?
+    </h1>
+  </div>
+
+
+<div class="textbox" id ="textbox1">
+  <div class="tagline" id ="headlineA">
+    LOADING
+  </div>
+  <div class="text" id ="textA">
+  ...
+  </div>
+</div>
+
+<div class="textbox" id ="textbox2">
+  <div class="tagline" id ="headlineB">
+	LOADING
+  </div>
+  <div class="text" id ="textB">
+  ...
+  </div>
+</div>
+
+
+</body>
+</html>
