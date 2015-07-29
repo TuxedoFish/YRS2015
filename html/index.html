@@ -5,43 +5,74 @@
 	<script src="../library/jquery-2.0.3.min.js"></script>
 	<script src="../library/jquery.transit.min.js"></script>
 	<script src = "http://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.js"></script>
-	<script src="../javascript/buttonslogic.js"></script>
 </head>
 
 <script>
+var states = ["not clicked", "not clicked", "not clicked",
+			"not clicked", "not clicked", "not clicked"]
+$(document).ready(function() {
+	$( "#guardian" ).click(function() { changeIcon(0, "#guardian") });
+	$( "#bbc" ).click(function() { changeIcon(1, "#bbc") });
+	$( "#telegraph" ).click(function() { changeIcon(2, "#telegraph" )});
+	$( "#dailymail" ).click(function() { changeIcon(3, "#dailymail") });
+	$( "#thesun" ).click(function() { changeIcon(4, "#thesun") });
+	$( "#thetimes" ).click(function() { changeIcon(5, "#thetimes") });
+});
 
+function changeIcon(index, id, shiftleft, shifttop) {
+	if(states[index]==="not clicked") { 
+		$( id ).attr('style', "box-shadow:2px 2px 10px 10px #85ADAC;" 
+								+ "-webkit-box-shadow:2px 2px 10px 10px #85ADAC;" 
+								+ "-moz-box-shadow:2px 2px 10px 10px #85ADAC;" +
+								"left:" + shiftleft + "%;top:" + shifttop + "%;"); 
+		states[index]="clicked"; 
+	} else {
+		$( id ).removeAttr('style');
+		states[index]="not clicked"; 
+	}
+}
 </script>
 
 <body>
 	<!--contains the website within a box-->
-	<div id="container" ng-app="logic" ng-controller="logiccontroller">
+	<div id="container">
 		<div id="headline">
 			<h1>
 				Which of these sources would you trust?
 			</h1>
 		</div>
 		<div class="icon" id="guardian">
-			<img src="../images/guardian.png"  height="200" width="200">
+			<img src="../images/guardian.png">
 			<br> The Guardian
 		</div>
+<<<<<<< HEAD
 		<div class="icon" id="bbc" style="left: 40%;">
 			<img src="../images/bbc.png"  height="200" width="200">
+=======
+		<div class="icon" id="bbc">
+			<img src="../images/bbc.png">
+>>>>>>> origin/master
 			<br> BBC News
 		</div>
-		<div class="icon" id="telegraph" style="left: 78%;">
-			<img src="../images/telegraph.jpg"  height="200" width="200">
+		<div class="icon" id="telegraph">
+			<img src="../images/telegraph.jpg">
 			<br> The Telegraph
 		</div>
-		<div class="icon" id="daily mail" style="top: 61%;">
-			<img src="../images/daily mail.jpg"  height="200" width="200">
-			<br> Daily mail
+		<div class="icon" id="dailymail">
+			<img src="../images/daily mail.jpg">
+			<br> Daily Mail
 		</div>
+<<<<<<< HEAD
 		<div class="icon" id="the sun" style="left: 40%; top: 61%;">
 			<img src="../images/the sun.jpg"  height="200" width="200">
+=======
+		<div class="icon" id="thesun">
+			<img src="../images/the sun.jpg">
+>>>>>>> origin/master
 			<br> The Sun
 		</div>
-		<div class="icon" id="the times" style="left: 78%; top: 61%;">
-			<img src="../images/the times.png"  height="200" width="200">
+		<div class="icon" id="thetimes">
+			<img src="../images/the times.png">
 			<br> The Times
 		</div>
 	</div>

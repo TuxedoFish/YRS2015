@@ -16,6 +16,7 @@ function getArticle(number, newspaper, callback) {
 		data: 'json'
 		
 		}).done(function ( data ) {
+			console.log(number + " : " + newspaper);
 			link = data.topics[number][newspaper];
 			$('.slider').append(link);
 			callback(link);
