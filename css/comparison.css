@@ -34,6 +34,20 @@ body {
   padding-left: 1%;
 }
 
+#urlbutton {
+	position: absolute;
+	top: 50%;
+	width: 103px;
+	height: 161px;
+}
+.leftbutton { left: 1.5%; background: url("../images/buttonleft1.png"); }
+.leftbutton:hover{ background: url("../images/buttonleft2.png"); }
+.leftbutton:active { background: url("../images/buttonleft3.png"); }
+
+.rightbutton { right: 1.5%; background: url("../images/buttonright1.png"); }
+.rightbutton:hover { background: url("../images/buttonright2.png"); }
+.rightbutton:active { background: url("../images/buttonright3.png"); }
+
 .textbox {
   padding: 2.5%;
   position: absolute;
@@ -41,13 +55,13 @@ body {
   margin-top: 1%;
   border-radius: 25px;
   top : 20%;
-  width: 40%;
+  width: 33%;
   background: #A7D9D7;
   font-family: Tahoma, Geneva, sans-serif;
   color: #FFFFFF;
 }
-#textbox2 { right:2%; }
-#textbox1 { left: 2%; }
+#textbox2 { right:8%; }
+#textbox1 { left:10%; }
 
 .textbox:hover {
 	background: #FF7200;
