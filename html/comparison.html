@@ -15,26 +15,28 @@
 <script>
 var position="loading";
 
-var newspapers = ["bbc", "daily mail", "guardian", "telegraph", "the sun", "the times"];
+var newspapers = ["BBC", "daily mail", "the guardian", "telegraph", "the sun", "the times"];
 
 resetTexts();
 
 $(document).ready(function() {
 $( "#textbox1" ).click(function() {
-	if(position != "loading" && position != "1up" && position != "2up") {
-		console.log(position);
-		position="1up";
-		console.log("clicked");
-		$( this ).slideUp();
+	if(position != "loading") {
+		$( "#headlineA" ).text("Loading");
+		$( "#textA" ).text("...");
+		$( "#headlineB" ).text("Loading");
+		$( "#textB" ).text("...");
+		position="loading";
 		resetTexts();
 	}
 });
 $( "#textbox2" ).click(function() {
-	if(position != "loading" && position != "1up" && position != "2up") {
-		console.log(position);
-		position="2up";
-		console.log("clicked");
-		$( this ).slideUp();
+	if(position != "loading") {
+		$( "#headlineA" ).text("Loading");
+		$( "#textA" ).text("...");
+		$( "#headlineB" ).text("Loading");
+		$( "#textB" ).text("...");
+		position="loading";
 		resetTexts();
 	}
 });
@@ -51,10 +53,6 @@ function resetTexts() {
 			text = textsentences.toString().concat(".");
 			$('#headlineB').text(title);
 			$('#textB').text(text);
-			
-			if(position="2up") {
-				$( "#textbox2" ).slideDown();
-			}
 		});
 	});
 	getArticle(article, newspapers[Math.round(Math.random()*5)], function(link) {
@@ -67,9 +65,6 @@ function resetTexts() {
 			$('#headlineA').text(title);
 			$('#textA').text(text);
 			
-			if(position="1up") {
-				$( "textbox1" ).slideDown();
-			}
 			position = "loaded";
 		});
 	});
