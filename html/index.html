@@ -20,15 +20,15 @@ $(document).ready(function() {
 });
 
 function changeIcon(index, id, shiftleft, shifttop) {
-	if(states[index]==="not clicked") { 
-		$( id ).attr('style', "box-shadow:2px 2px 10px 10px #85ADAC;" 
-								+ "-webkit-box-shadow:2px 2px 10px 10px #85ADAC;" 
+	if(states[index]==="not clicked") {
+		$( id ).attr('style', "box-shadow:2px 2px 10px 10px #85ADAC;"
+								+ "-webkit-box-shadow:2px 2px 10px 10px #85ADAC;"
 								+ "-moz-box-shadow:2px 2px 10px 10px #85ADAC;" +
-								"left:" + shiftleft + "%;top:" + shifttop + "%;"); 
-		states[index]="clicked"; 
+								"left:" + shiftleft + "%;top:" + shifttop + "%;");
+		states[index]="clicked";
 	} else {
 		$( id ).removeAttr('style');
-		states[index]="not clicked"; 
+		states[index]="not clicked";
 	}
 }
 </script>
@@ -45,6 +45,7 @@ function changeIcon(index, id, shiftleft, shifttop) {
 			<img src="../images/guardian.png">
 			<br> The Guardian
 		</div>
+
 		<div class="icon" id="bbc">
 			<img src="../images/bbc.png">
 			<br> BBC News
