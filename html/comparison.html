@@ -34,9 +34,9 @@ $( "#textbox1" ).click(function() {
 		$( "#textB" ).text("...");
 		position="loading";
 		console.log("../php/db_request.php?user_id=test&bbc="+values[0]+"&dailymail="+values[1]+"&guardian="+values[2]+"&telegraph="+values[3]
-					+"&sun="+values[4]+"&times"+values[5]);
+					+"&sun="+values[4]+"&times="+values[5]);
 		httpGet("../php/db_request.php?user_id=test&bbc="+values[0]+"&dailymail="+values[1]+"&guardian="+values[2]+"&telegraph="+values[3]
-					+"&sun="+values[4]+"&times"+values[5]);
+					+"&sun="+values[4]+"&times="+values[5]);
 		resetTexts();
 	}
 });
@@ -50,9 +50,9 @@ $( "#textbox2" ).click(function() {
 		$( "#headlineB" ).text("LOADING");
 		$( "#textB" ).text("...");
 		console.log("../php/db_request.php?user_id=test&bbc="+values[0]+"&dailymail="+values[1]+"&guardian="+values[2]+"&telegraph="+values[3]
-					+"&sun="+values[4]+"&times"+values[5]);
+					+"&sun="+values[4]+"&times="+values[5]);
 		httpGet("../php/db_request.php?user_id=test&bbc="+values[0]+"&dailymail="+values[1]+"&guardian="+values[2]+"&telegraph="+values[3]
-					+"&sun="+values[4]+"&times"+values[5]);
+					+"&sun="+values[4]+"&times="+values[5]);
 		position="loading";
 		resetTexts();
 	}
