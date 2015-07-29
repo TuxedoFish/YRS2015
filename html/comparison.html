@@ -8,6 +8,7 @@
 <script src="../library/jquery.transit.min.js"></script>
 <script src = "http://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.js"></script>
 <script src="../javascript/getarticle.js"></script>
+<script src="../javascript/getrequest.js"></script>
 </head>
 
 <body>
@@ -16,26 +17,42 @@
 var position="loading";
 
 var newspapers = ["BBC", "daily mail", "the guardian", "telegraph", "the sun", "the times"];
+var values = ["0", "0", "0", "0", "0", "0"];
+var sources = ["unknown", "unknown"];
 
 resetTexts();
 
 $(document).ready(function() {
 $( "#textbox1" ).click(function() {
+	if(sources[1]==="BBC") {values[0]=1;} if(sources[1]==="daily mail") {values[1]=1;}
+	if(sources[1]==="the guardian") {values[2]=1;} if(sources[1]==="telegraph") {values[3]=1;}
+	if(sources[1]==="the sun") {values[4]=1;} if(sources[1]==="the times") {values[5]=1;}
 	if(position != "loading") {
 		$( "#headlineA" ).text("LOADING");
 		$( "#textA" ).text("...");
 		$( "#headlineB" ).text("LOADING");
 		$( "#textB" ).text("...");
 		position="loading";
+		console.log("../php/db_request.php?user_id=test&bbc="+values[0]+"&dailymail="+values[1]+"&guardian="+values[2]+"&telegraph="+values[3]
+					+"&sun="+values[4]+"&times"+values[5]);
+		httpGet("../php/db_request.php?user_id=test&bbc="+values[0]+"&dailymail="+values[1]+"&guardian="+values[2]+"&telegraph="+values[3]
+					+"&sun="+values[4]+"&times"+values[5]);
 		resetTexts();
 	}
 });
 $( "#textbox2" ).click(function() {
+	if(sources[0]==="BBC") {values[0]=1;} if(sources[0]==="daily mail") {values[1]=1;}
+	if(sources[0]==="the guardian") {values[2]=1;} if(sources[0]==="telegraph") {values[3]=1;}
+	if(sources[0]==="the sun") {values[4]=1;} if(sources[0]==="the times") {values[5]=1;}
 	if(position != "loading") {
 		$( "#headlineA" ).text("LOADING");
 		$( "#textA" ).text("...");
 		$( "#headlineB" ).text("LOADING");
 		$( "#textB" ).text("...");
+		console.log("../php/db_request.php?user_id=test&bbc="+values[0]+"&dailymail="+values[1]+"&guardian="+values[2]+"&telegraph="+values[3]
+					+"&sun="+values[4]+"&times"+values[5]);
+		httpGet("../php/db_request.php?user_id=test&bbc="+values[0]+"&dailymail="+values[1]+"&guardian="+values[2]+"&telegraph="+values[3]
+					+"&sun="+values[4]+"&times"+values[5]);
 		position="loading";
 		resetTexts();
 	}
@@ -44,7 +61,10 @@ $( "#textbox2" ).click(function() {
 function resetTexts() {
 	var article = Math.round(Math.random()*2);
 
-	getArticle(article, newspapers[Math.round(Math.random()*5)], function(link) {
+	sources[0] = newspapers[Math.round(Math.random()*5)];
+	sources[1] = newspapers[Math.round(Math.random()*5)];
+	
+	getArticle(article, sources[0], function(link) {
 		getUrl(link, function(data) {
 			console.log(link);
 			var title = data.objects[0].title;
@@ -55,7 +75,7 @@ function resetTexts() {
 			$('#textB').text(text);
 		});
 	});
-	getArticle(article, newspapers[Math.round(Math.random()*5)], function(link) {
+	getArticle(article, sources[1], function(link) {
 		getUrl(link, function(data) {
 			console.log(link);
 			var title = data.objects[0].title;
