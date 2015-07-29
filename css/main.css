@@ -26,6 +26,13 @@ body {
   border-width: 3.5px;
   border-color: #85adac;
 }
+.icon:hover {
+	background: #FF7200;
+	border-color: #EE6100;
+}
+.icon:active {
+	background: #EE6100;
+}
 .icon img {
 	padding-top: 5%;
 	display:block;
