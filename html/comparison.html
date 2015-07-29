@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Comparison</title>
+<title>Newspaper Discovery</title>
 
 <link rel="stylesheet" type="text/css" href="../css/comparison.css" >
 <script src="../library/jquery-2.0.3.min.js"></script>
@@ -14,6 +14,8 @@
 
 <script>
 var position="loading";
+
+var newspapers = ["bbc", "daily mail", "guardian", "telegraph", "the sun", "the times"];
 
 resetTexts();
 
@@ -38,8 +40,11 @@ $( "#textbox2" ).click(function() {
 });
 });
 function resetTexts() {
-	getArticle(0, "the guardian", function(link) {
+	var article = Math.round(Math.random()*2);
+	
+	getArticle(article, newspapers[Math.round(Math.random()*5)], function(link) {
 		getUrl(link, function(data) {
+			console.log(link);
 			var title = data.objects[0].title;
 			var text = data.objects[0].text;
 			textsentences = text.split(".", 15);
@@ -52,8 +57,9 @@ function resetTexts() {
 			}
 		});
 	});
-	getArticle(0, "the sun", function(link) {
+	getArticle(article, newspapers[Math.round(Math.random()*5)], function(link) {
 		getUrl(link, function(data) {
+			console.log(link);
 			var title = data.objects[0].title;
 			var text = data.objects[0].text;
 			textsentences = text.split(".", 15);
@@ -80,19 +86,19 @@ function resetTexts() {
 
 <div class="textbox" id ="textbox1">
   <div class="tagline" id ="headlineA">
-    Headline A
+    LOADING
   </div>
   <div class="text" id ="textA">
-    Text text text text text text
+  ...
   </div>
 </div>
 
 <div class="textbox" id ="textbox2">
   <div class="tagline" id ="headlineB">
-    Headline B
+	LOADING
   </div>
   <div class="text" id ="textB">
-    Text text text text text text
+  ...
   </div>
 </div>
 
