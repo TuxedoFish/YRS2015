@@ -21,6 +21,15 @@ var newspapers = ["BBC", "daily mail", "the guardian", "telegraph", "the sun", "
 var values = ["0", "0", "0", "0", "0", "0"];
 var sources = ["unknown", "unknown"];
 
+if(sessvars.initialised!="initialised") {
+	console.log("init");
+	sessvars.states = ["not clicked", "not clicked", "not clicked",
+				"not clicked", "not clicked", "not clicked"];
+	sessvars.comparisons = 0;
+	sessvars.initialised="initialised";
+	sessvars.name="new";
+}
+
 resetTexts();
 
 $(document).ready(function() {
@@ -73,7 +82,13 @@ function resetTexts() {
 	var article = Math.round(Math.random()*2);
 
 	sources[0] = newspapers[Math.round(Math.random()*5)];
-	sources[1] = newspapers[Math.round(Math.random()*5)];
+	
+	var different=false;
+	
+	while(!different) {
+		sources[1] = newspapers[Math.round(Math.random()*5)];
+		if(sources[1] != sources[0]) { different=true; }
+	}
 	
 	getArticle(article, sources[0], function(link) {
 		getUrl(link, function(data) {
