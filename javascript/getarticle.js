@@ -1,6 +1,7 @@
 function getUrl(url, callback) {
+	console.log('http://api.diffbot.com/v3/article?token=14bc76d1b7868c3feca9e6be884d5e1c&discussion=false&paging=false&url='.concat(url));
 	$.ajax({
-		url: 'http://api.diffbot.com/v3/article?token=14bc76d1b7868c3feca9e6be884d5e1c&url='.concat(url),
+		url: 'http://api.diffbot.com/v3/article?token=14bc76d1b7868c3feca9e6be884d5e1c&discussion=false&paging=false&url='.concat(url),
 		type: 'GET',
 		data: 'json'
 		

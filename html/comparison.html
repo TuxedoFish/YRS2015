@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Newspaper Discovery</title>
+<title>Paper Picker</title>
 
 <link rel="stylesheet" type="text/css" href="../css/comparison.css" >
+<script src="../javascript/sessvars.js"></script>
 <script src="../library/jquery-2.0.3.min.js"></script>
 <script src="../library/jquery.transit.min.js"></script>
 <script src = "http://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.js"></script>
@@ -69,7 +70,7 @@ function resetTexts() {
 			console.log(link);
 			var title = data.objects[0].title;
 			var text = data.objects[0].text;
-			textsentences = text.split(".", 15);
+			textsentences = text.split(".", 3);
 			text = textsentences.toString().concat(".");
 			$('#headlineB').text(title);
 			$('#textB').text(text);
@@ -80,7 +81,7 @@ function resetTexts() {
 			console.log(link);
 			var title = data.objects[0].title;
 			var text = data.objects[0].text;
-			textsentences = text.split(".", 15);
+			textsentences = text.split(".", 3);
 			text = textsentences.toString().concat(".");
 			$('#headlineA').text(title);
 			$('#textA').text(text);
