@@ -13,13 +13,13 @@ body {
   margin-right: 2%;
   margin-top: 1%;
   border-radius: 25px;
-  width: 15%;
-  height: 35%;
+  width: 10%;
+  height: 20%;
   background: #A7D9D7;
   font-family: Tahoma, Geneva, sans-serif;
   color: #FFFFFF;
   text-align: center;
-  font-size: 200%;
+  font-size: 100%;
   border-style: solid;
   border-width: 3.5px;
   border-color: #85adac;
@@ -28,16 +28,44 @@ body {
 .icon img {
 	padding-top: 5%;
 	display:block;
-    margin:auto;
-	width: 70%;
+  margin:auto;
+	width: 60%;
 	height: 60%;
 }
-#bbc { left: 10%; top: 20%; }
-#guardian {left: 40%; top: 20%}
-#telegraph {left: 72%; top: 20%}
-#thesun {left: 10%; top: 61%}
-#thetimes{left: 40%; top: 61%}
-#dailymail {left: 72%; top: 61%}
+
+#thesun {left: 7%; top: 69%;}
+#bbc { left: 22%; top: 69%; }
+#guardian {left: 37%; top: 69%;}
+#thetimes{left: 51%; top: 69%;}
+#dailymail {left: 66%; top: 69%;}
+#telegraph {left: 80%; top: 69%;}
+
+#newpaper {
+	position: absolute;
+  margin-right: 2%;
+  margin-top: 1%;
+  border-radius: 25px;
+  width: 27%;
+  height: 45%;
+	left: 36%;
+	top:20%;
+  background: #A7D9D7;
+  font-family: Tahoma, Geneva, sans-serif;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 180%;
+  border-style: solid;
+  border-width: 3.5px;
+  border-color: #85adac;
+}
+
+#newpaper img{
+	padding-top: 5%;
+	display:block;
+	margin:auto;
+	width: 60%;
+	height: 60%;
+}
 
 #headline {
 	position: absolute;
@@ -55,6 +83,8 @@ body {
   font-family: Tahoma, Geneva, sans-serif;
 	-webkit-margin-before :0.35em;
 }
+
+
 .entry {
     display:inline-block;
     vertical-align:top;

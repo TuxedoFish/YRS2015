@@ -54,11 +54,11 @@ body {
 	height: 60%;
 }
 #bbc { left: 8%; top: 20%; }
-#guardian {left: 40%; top: 20%}
-#telegraph {left: 76%; top: 20%}
-#thesun {left: 8%; top: 61%}
-#thetimes{left: 40%; top: 61%}
-#dailymail {left: 76%; top: 61%}
+#guardian {left: 40%; top: 20%;}
+#telegraph {left: 76%; top: 20%;}
+#thesun {left: 8%; top: 61%;}
+#thetimes{left: 40%; top: 61%;}
+#dailymail {left: 76%; top: 61%;}
 
 #headline {
 	position: absolute;
