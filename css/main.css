@@ -72,8 +72,9 @@ body {
 	font-size: 100px;
 	text-align: center ;
 	color: #FFFFFF;
-    font-size: 500%;
-    font-family: Tahoma, Geneva, sans-serif;
+  font-size: 425%;
+  font-family: Tahoma, Geneva, sans-serif;
+	-webkit-margin-before :0.35em;
 }
 .entry {
     display:inline-block;
