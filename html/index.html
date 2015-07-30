@@ -99,14 +99,13 @@ function setIcon(index, id, shiftleft, shifttop) {
 </body>
 
 <script>
-sessvars.name = "undefined";
-
 if(sessvars.initialised!="initialised") {
 	console.log("init");
 	sessvars.states = ["not clicked", "not clicked", "not clicked",
 				"not clicked", "not clicked", "not clicked"];
 	sessvars.comparisons = 0;
 	sessvars.initialised="initialised";
+	sessvars.name="new";
 }
 
 setIcon(0, "#guardian"); setIcon(1, "#bbc"); setIcon(2, "#telegraph");
@@ -127,7 +126,7 @@ function changeIcon(index, id) {
 	if(sessvars.states[index]==="not clicked") {
 		$( id ).attr('style', "box-shadow:2px 2px 10px 10px #85ADAC;"
 								+ "-webkit-box-shadow:2px 2px 10px 10px #85ADAC;"
-								+ "-moz-box-shadow:2px 2px 10px 10px #85ADAC;");
+								+ "-moz-box-shadow:2px 2px 10px 10px #85ADAC; background: #FF7200;");
 		sessvars.states[index]="clicked";
 	} else {
 		$( id ).removeAttr('style');
@@ -139,7 +138,12 @@ function setIcon(index, id) {
 		console.log("thisshouldwork : " + id);
 		$( id ).attr('style', "box-shadow:2px 2px 10px 10px #85ADAC;"
 								+ "-webkit-box-shadow:2px 2px 10px 10px #85ADAC;"
+<<<<<<< HEAD
 								+ "-moz-box-shadow:2px 2px 10px 10px #85ADAC;");
 	}
+=======
+								+ "-moz-box-shadow:2px 2px 10px 10px #85ADAC; background: #FF7200;");
+	} 
+>>>>>>> origin/master
 }
 </script>
