@@ -3,7 +3,8 @@
 <head>
 <title>Paper Picker</title>
 
-<link rel="stylesheet" type="text/css" href="../css/comparison.css" >
+<link rel="stylesheet" type="text/css" href="../css/comparison.css">
+<link rel="shortcut icon" href="../images/logo.ico"/>
 <script src="../javascript/sessvars.js"></script>
 <script src="../library/jquery-2.0.3.min.js"></script>
 <script src="../library/jquery.transit.min.js"></script>
@@ -92,7 +93,7 @@ function resetTexts() {
 	
 	getArticle(article, sources[0], function(link) {
 		getUrl(link, function(data) {
-			console.log(link);
+			console.log(data);
 			var title = data.objects[0].title;
 			var text = data.objects[0].text;
 			textsentences = text.split(".", 3);
@@ -103,7 +104,7 @@ function resetTexts() {
 	});
 	getArticle(article, sources[1], function(link) {
 		getUrl(link, function(data) {
-			console.log(link);
+			console.log(data);
 			var title = data.objects[0].title;
 			var text = data.objects[0].text;
 			textsentences = text.split(".", 3);
@@ -119,9 +120,11 @@ function resetTexts() {
 
 <div id="container">
   <div id="headline">
-      Which of these do you agree with?
+	  <img src="../images/logo.png" width=80px height=80px></img>
+      <h1>Which of these do you agree with?</h1>
+	  <h2 id="comparisons"> 0/5 </h2>
   </div>
-  <div id="comparisons"> 0/5 </div>
+  
 
     <a href="index.html"><div id="urlbutton" class="leftbutton"></div></a>
 

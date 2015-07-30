@@ -54,9 +54,9 @@ body {
 	width: 70%;
 	height: 65%;
 }
-#guardian { left: 8%; top: 23.5%; }
-#bbc {left: 40%; top: 23.5%}
-#telegraph {left: 76%; top: 23.5%}
+#guardian { left: 8%; top: 17%; }
+#bbc {left: 40%; top: 17%}
+#telegraph {left: 76%; top: 17%}
 #dailymail {left: 8%; top: 61%}
 #thesun{left: 40%; top: 61%}
 #thetimes {left: 76%; top: 61%}
@@ -64,18 +64,29 @@ body {
 #headline {
 	position: absolute;
 	width: 100%;
-	height: 20%;
-	background: #A7D9D7;
-	padding: 0px;
+	height:  100px;
+	color: #A7D9D7;
 	box-shadow: 0px 5px 5px #888888;
+	background-color: #FFFFFF;
 }
 #headline h1 {
 	font-size: 100px;
 	text-align: center ;
-	color: #FFFFFF;
-    font-size: 500%;
+	display: inline-block;
+	font-size: 320%;
+	line-height: 180%;
+	padding: 0 0 0 100PX;
+	margin: 0;
     font-family: Tahoma, Geneva, sans-serif;
+	font-weight: bold;
 }
+
+#headline img {
+	position: absolute;
+	right: 50px;
+	top: 10px;
+}
+
 .entry {
     display:inline-block;
     vertical-align:top;

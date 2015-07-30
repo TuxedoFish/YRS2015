@@ -1,7 +1,6 @@
 function getUrl(url, callback) {
-	console.log('http://api.diffbot.com/v3/article?token=14bc76d1b7868c3feca9e6be884d5e1c&discussion=false&paging=false&url='.concat(url));
 	$.ajax({
-		url: 'http://api.diffbot.com/v3/article?token=14bc76d1b7868c3feca9e6be884d5e1c&discussion=false&paging=false&url='.concat(url),
+		url: url,
 		type: 'GET',
 		data: 'json'
 		
@@ -17,9 +16,9 @@ function getArticle(number, newspaper, callback) {
 		data: 'json'
 		
 		}).done(function ( data ) {
-			console.log(number + " : " + newspaper);
-			link = data.topics[number][newspaper];
-			$('.slider').append(link);
+			var paper = data.topics[number][newspaper];
+			link = "http://api.diffbot.com/v3/article?token=14bc76d1b7868c3feca9e6be884d5e1c&discussion=false&paging=false&url=".concat(paper);
+			
 			callback(link);
 		}).error(function ( data ) {
 			console.log(data + "fail");
