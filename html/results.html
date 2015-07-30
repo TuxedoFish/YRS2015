@@ -14,10 +14,15 @@ $(document).ready(function(){
 	$("#newpaper").animate({top: '142px'},"slow");
 	
 	getUrl("../php/recommend.php?user_id="+sessvars.name, function(data) {
-		$("#recommended").text(data);
+		if(data=="bbc") {$("#recommendedimg").attr("src", "../images/bbc.png"); $("#recommended").text("BBC News");}
+		if(data=="sun") {$("#recommendedimg").attr("src", "../images/the sun.jpg"); $("#recommended").text("The Sun");}
+		if(data=="guardian") {$("#recommendedimg").attr("src", "../images/guardian.png"); $("#recommended").text("The Guardian");}
+		if(data=="telegraph") {$("#recommendedimg").attr("src", "../images/telegraph.jpg"); $("#recommended").append("The Telegraph");}
+		if(data=="dailymail") {$("#recommendedimg").attr("src", "../images/daily mail.jpg"); $("#recommended").text("The Daily Mail");}
+		if(data=="times") {$("#recommendedimg").attr("src", "../images/the times.png"); $("#recommended").text("The times");}
 	});
 	
-	getUrl("../php/userdata.php?user_id=2", function(data) {
+	getUrl("../php/userdata.php?user_id="+sessvars.name, function(data) {
 		var realdata = JSON.parse(data);
 		
 		var positionnames = ["1st", "2nd", "3rd", "4th", "5th", "6th"];
@@ -59,7 +64,6 @@ $(document).ready(function(){
 		
 		console.log(finalpositions);
 	});
-	
 });
 </script>
 
@@ -77,8 +81,7 @@ $(document).ready(function(){
 			 The Sun
 			<div id="thesunratings1"></div>
 			<div id="thesunratings2"></div>
-		</div>
-		<div class="icon" id="bbc">
+		</div><div class="icon" id="bbc">
 			<img src="../images/bbc.png">
 			 BBC
 			<div id="bbcratings1"></div>
@@ -98,24 +101,32 @@ $(document).ready(function(){
 			 The Daily Mail
 			<div id="dailymailratings1"></div>
 			<div id="dailymailratings2"></div>
-		 	</div>
-		</div>
-		<div class="icon" id="telegraph">
+		</div><div class="icon" id="telegraph">
 			<img src="../images/telegraph.jpg">
 			 The Telegraph
 			<div id="telegraphratings1"></div>
 			<div id="telegraphratings2"></div>
 		</div>
 		<div id="newpaper">
-				<img src="../images/the times.png">
-				<div id="recommended"> Your recommended paper is </div>
+				<img src="../images/the times.png" id="recommendedimg">
+				<div id="recommended"> We Recommend </br> </div>
 		</div>
 
 		</div>
-
-	</div>
 </body>
 </html>
 
-	</div>
-</body>
+<script>
+$(document).ready(function(){
+	setIcon(0, "#guardian"); setIcon(1, "#bbc"); setIcon(2, "#telegraph");
+	setIcon(3, "#dailymail"); setIcon(4, "#thesun"); setIcon(5, "#thetimes");
+	
+	function setIcon(index, id) {
+		if(sessvars.states[index]==="clicked") {
+			$( id ).attr('style', "box-shadow:2px 2px 10px 10px #85ADAC;"
+									+ "-webkit-box-shadow:2px 2px 10px 10px #85ADAC;"
+									+ "-moz-box-shadow:2px 2px 10px 10px #85ADAC; background: #FF7200;");
+		}
+	}
+});
+</script>

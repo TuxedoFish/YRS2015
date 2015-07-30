@@ -75,7 +75,7 @@ function changeIcon(index, id) {
 	if(sessvars.states[index]==="not clicked") {
 		$( id ).attr('style', "box-shadow:2px 2px 10px 10px #85ADAC;"
 								+ "-webkit-box-shadow:2px 2px 10px 10px #85ADAC;"
-								+ "-moz-box-shadow:2px 2px 10px 10px #85ADAC;");
+								+ "-moz-box-shadow:2px 2px 10px 10px #85ADAC; background: #FF7200;");
 		sessvars.states[index]="clicked";
 	} else {
 		$( id ).removeAttr('style');
@@ -87,7 +87,7 @@ function setIcon(index, id) {
 		console.log("thisshouldwork");
 		$( id ).attr('style', "box-shadow:2px 2px 10px 10px #85ADAC;"
 								+ "-webkit-box-shadow:2px 2px 10px 10px #85ADAC;"
-								+ "-moz-box-shadow:2px 2px 10px 10px #85ADAC;");
+								+ "-moz-box-shadow:2px 2px 10px 10px #85ADAC; background: #FF7200;");
 	}
 }
 </script>

@@ -26,6 +26,7 @@ if(sessvars.initialised!="initialised") {
 	sessvars.states = ["not clicked", "not clicked", "not clicked",
 				"not clicked", "not clicked", "not clicked"];
 	sessvars.comparisons = 0;
+	sessvars.article=-1;
 	sessvars.initialised="initialised";
 	sessvars.name="new";
 }
@@ -50,7 +51,7 @@ $( "#textbox1" ).click(function() {
 							if(sessvars.name==="new") {sessvars.name=data; console.log(sessvars.name);}
 		});
 		sessvars.comparisons += 1;
-		$("#comparisons").text(sessvars.comparisons + "/5");
+		$("#comparisons").text(sessvars.comparisons + "/3");
 		if(sessvars.comparisons==5) {
 			window.location.href = "../html/results.html";
 		}
@@ -74,7 +75,7 @@ $( "#textbox2" ).click(function() {
 		});
 		position="loading";
 		sessvars.comparisons += 1;
-		$("#comparisons").text(sessvars.comparisons + "/5");
+		$("#comparisons").text(sessvars.comparisons + "/3");
 		if(sessvars.comparisons==5) {
 			window.location.href = "../html/results.html";
 		}
@@ -84,7 +85,7 @@ $( "#textbox2" ).click(function() {
 });
 function resetTexts() {
 	values = ["0", "0", "0", "0", "0", "0"];
-	var article = Math.round(Math.random()*2);
+	sessvars.article += 1;
 
 	sources[0] = newspapers[Math.round(Math.random()*5)];
 	
@@ -95,7 +96,7 @@ function resetTexts() {
 		if(sources[1] != sources[0]) { different=true; }
 	}
 	
-	getArticle(article, sources[0], function(link) {
+	getArticle(sessvars.article, sources[0], function(link) {
 		getUrl(link, function(data) {
 			console.log(data);
 			var title = data.objects[0].title;
@@ -106,7 +107,7 @@ function resetTexts() {
 			$('#textB').text(text);
 		});
 	});
-	getArticle(article, sources[1], function(link) {
+	getArticle(sessvars.article, sources[1], function(link) {
 		getUrl(link, function(data) {
 			console.log(data);
 			var title = data.objects[0].title;
@@ -126,7 +127,7 @@ function resetTexts() {
   <div id="headline">
 	  <img src="../images/logo.png" width=80px height=80px></img>
       <h1>Which of these is more fair and accurate?</h1>
-	  <h2 id="comparisons"> 0/5 </h2>
+	  <h2 id="comparisons"> 0/3 </h2>
   </div>
   
 
