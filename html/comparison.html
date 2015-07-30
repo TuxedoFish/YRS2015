@@ -38,6 +38,11 @@ $( "#textbox1" ).click(function() {
 					+"&sun="+values[4]+"&times="+values[5]);
 		httpGet("../php/db_request.php?user_id=test&bbc="+values[0]+"&dailymail="+values[1]+"&guardian="+values[2]+"&telegraph="+values[3]
 					+"&sun="+values[4]+"&times="+values[5]);
+		sessvars.comparisons += 1;
+		$("#comparisons").text(sessvars.comparisons + "/5");
+		if(sessvars.comparisons==5) {
+			window.location.href = "../html/results.html";
+		}
 		resetTexts();
 	}
 });
@@ -55,6 +60,11 @@ $( "#textbox2" ).click(function() {
 		httpGet("../php/db_request.php?user_id=test&bbc="+values[0]+"&dailymail="+values[1]+"&guardian="+values[2]+"&telegraph="+values[3]
 					+"&sun="+values[4]+"&times="+values[5]);
 		position="loading";
+		sessvars.comparisons += 1;
+		$("#comparisons").text(sessvars.comparisons + "/5");
+		if(sessvars.comparisons==5) {
+			window.location.href = "../html/results.html";
+		}
 		resetTexts();
 	}
 });
@@ -94,10 +104,9 @@ function resetTexts() {
 
 <div id="container">
   <div id="headline">
-    <h1>
       Which of these do you agree with?
-    </h1>
   </div>
+  <div id="comparisons"> 0/5 </div>
 
     <a href="index.html"><div id="urlbutton" class="leftbutton"></div></a>
 
