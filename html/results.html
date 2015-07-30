@@ -5,11 +5,61 @@
 	<link rel="stylesheet" type="text/css" href="../css/results.css" >
 	<script src="../library/jquery-2.0.3.min.js"></script>
 	<script src="../library/jquery.transit.min.js"></script>
+	<script src="../library/sessvars.js"></script>
+	<script src="../javascript/getarticle.js"></script>
 	<script src = "http://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.js"></script>
 </head>
 <script>
 $(document).ready(function(){
 	$("#newpaper").animate({top: '142px'},"slow");
+	
+	getUrl("../php/recommend.php?user_id="+sessvars.name, function(data) {
+		$("#recommended").text(data);
+	});
+	
+	getUrl("../php/userdata.php?user_id=2", function(data) {
+		var realdata = JSON.parse(data);
+		
+		var positionnames = ["1st", "2nd", "3rd", "4th", "5th", "6th"];
+		var finalpositions = [{'number': parseInt(realdata.sun), 'name': 'thesun'}, {'number': parseInt(realdata.bbc), 'name': 'bbc'}, 
+							  {'number': parseInt(realdata.guardian), 'name': 'guardian'}, {'number': parseInt(realdata.dailymail), 'name': 'dailymail'}, 
+							  {'number': parseInt(realdata.telegraph), 'name': 'telegraph'},{'number': parseInt(realdata.times), 'name': 'thetimes'}]
+		
+		finalpositions.sort(function(a,b){
+		  return a.number < b.number ? 1 : -1;
+		});
+		
+		varcurrentposition = "1st";
+		lastnumber=-1;
+		for(var i=0; i<=5; i++) {
+			var name = "#"+finalpositions[i].name+"ratings1"
+			$(name).text("You rated this " + positionnames[i]);
+		}
+		
+		console.log(finalpositions);
+	});
+	getUrl("../php/totals.php", function(data) {
+		var realdata = JSON.parse(data);
+		
+		var positionnames = ["1st", "2nd", "3rd", "4th", "5th", "6th"];
+		var finalpositions = [{'number': parseInt(realdata["SUM(sun)"]), 'name': 'thesun'}, {'number': parseInt(realdata["SUM(bbc)"]), 'name': 'bbc'}, 
+							  {'number': parseInt(realdata["SUM(guardian)"]), 'name': 'guardian'}, {'number': parseInt(realdata["SUM(dailymail)"]), 'name': 'dailymail'}, 
+							  {'number': parseInt(realdata["SUM(telegraph)"]), 'name': 'telegraph'},{'number': parseInt(realdata["SUM(times)"]), 'name': 'thetimes'}]
+		
+		finalpositions.sort(function(a,b){
+		  return a.number < b.number ? 1 : -1;
+		});
+		
+		varcurrentposition = "1st";
+		lastnumber=-1;
+		for(var i=0; i<=5; i++) {
+			var name = "#"+finalpositions[i].name+"ratings2"
+			$(name).text("Others rated this " + positionnames[i]);
+		}
+		
+		console.log(finalpositions);
+	});
+	
 });
 </script>
 
@@ -25,57 +75,40 @@ $(document).ready(function(){
 		<div class="icon" id="thesun">
 			<img src="../images/the sun.jpg">
 			 The Sun
-			<div id="sunratings">You rated this
-				<b>1<sup>st</sup></b>
-			 	people generally rated this
-				<b>5<sup>th</sup></b>
-		 	</div>
+			<div id="thesunratings1"></div>
+			<div id="thesunratings2"></div>
 		</div>
 		<div class="icon" id="bbc">
 			<img src="../images/bbc.png">
 			 BBC
-			<div id="sunratings">You rated this
-				<b>1<sup>st</sup></b>
-			 	people generally rated this
-				<b>5<sup>th</sup></b>
-		 	</div>
+			<div id="bbcratings1"></div>
+			<div id="bbcratings2"></div>
 		</div><div class="icon" id="guardian">
 			<img src="../images/guardian.png">
 			 The Guardian
-			<div id="sunratings">You rated this
-				<b>1<sup>st</sup></b>
-			 	people generally rated this
-				<b>5<sup>th</sup></b>
-		 	</div>
+			<div id="guardianratings1"></div>
+			<div id="guardianratings2"></div>
 		</div><div class="icon" id="thetimes">
 			<img src="../images/the times.png">
 			 The Times
-			<div id="sunratings">You rated this
-				<b>1<sup>st</sup></b>
-			 	people generally rated this
-				<b>5<sup>th</sup></b>
-		 	</div>
+			<div id="thetimesratings1"></div>
+			<div id="thetimesratings2"></div>
 		</div><div class="icon" id="dailymail">
 			<img src="../images/daily mail.jpg">
 			 The Daily Mail
-			<div id="sunratings">You rated this
-				<b>1<sup>st</sup></b>
-			 	people generally rated this
-				<b>5<sup>th</sup></b>
+			<div id="dailymailratings1"></div>
+			<div id="dailymailratings2"></div>
 		 	</div>
 		</div>
 		<div class="icon" id="telegraph">
 			<img src="../images/telegraph.jpg">
 			 The Telegraph
-			<div id="sunratings">You rated this
-				<b>1<sup>st</sup></b>
-			 	people generally rated this
-				<b>5<sup>th</sup></b>
-		 	</div>
+			<div id="telegraphratings1"></div>
+			<div id="telegraphratings2"></div>
 		</div>
 		<div id="newpaper">
-			<img src="../images/the times.png">
-				 Your recommended paper is
+				<img src="../images/the times.png">
+				<div id="recommended"> Your recommended paper is </div>
 		</div>
 
 		</div>

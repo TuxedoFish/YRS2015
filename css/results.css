@@ -71,20 +71,20 @@ body {
 
 #newpaper {
 	margin-right: 2%;
-  margin-top: 1%;
-  border-radius: 25px;
+    margin-top: 1%;
+    border-radius: 25px;
 	height: 47%;
 	width: 30%;
 	top: -200px;
 	left :35%;
-  background: #A7D9D7;
-  font-family: Tahoma, Geneva, sans-serif;
-  color: #FFFFFF;
-  text-align: center;
-  font-size: 180%;
-  border-style: solid;
-  border-width: 3.5px;
-  border-color: #85adac;
+    background: #A7D9D7;
+    font-family: Tahoma, Geneva, sans-serif;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 180%;
+    border-style: solid;
+    border-width: 3.5px;
+    border-color: #85adac;
 	position: absolute;
 
 }
