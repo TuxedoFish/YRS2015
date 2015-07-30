@@ -44,10 +44,12 @@ $( "#textbox1" ).click(function() {
 		$( "#headlineB" ).text("LOADING");
 		$( "#textB" ).text("...");
 		position="loading";
-		console.log("../php/db_request.php?user_id=test&bbc="+values[0]+"&dailymail="+values[1]+"&guardian="+values[2]+"&telegraph="+values[3]
+		getUrl("../php/db_request.php?user_id="+sessvars.name+"&bbc="+values[0]+"&dailymail="+values[1]+"&guardian="+values[2]+"&telegraph="+values[3]
+					+"&sun="+values[4]+"&times="+values[5], function(data) {
+							console.log("../php/db_request.php?user_id="+sessvars.name+"&bbc="+values[0]+"&dailymail="+values[1]+"&guardian="+values[2]+"&telegraph="+values[3]
 					+"&sun="+values[4]+"&times="+values[5]);
-		httpGet("../php/db_request.php?user_id=test&bbc="+values[0]+"&dailymail="+values[1]+"&guardian="+values[2]+"&telegraph="+values[3]
-					+"&sun="+values[4]+"&times="+values[5]);
+							if(sessvars.name==="new") {sessvars.name=data; console.log(sessvars.name);}
+		});
 		sessvars.comparisons += 1;
 		$("#comparisons").text(sessvars.comparisons + "/5");
 		if(sessvars.comparisons==5) {
@@ -65,10 +67,12 @@ $( "#textbox2" ).click(function() {
 		$( "#textA" ).text("...");
 		$( "#headlineB" ).text("LOADING");
 		$( "#textB" ).text("...");
-		console.log("../php/db_request.php?user_id=test&bbc="+values[0]+"&dailymail="+values[1]+"&guardian="+values[2]+"&telegraph="+values[3]
+		getUrl("../php/db_request.php?user_id="+sessvars.name+"&bbc="+values[0]+"&dailymail="+values[1]+"&guardian="+values[2]+"&telegraph="+values[3]
+					+"&sun="+values[4]+"&times="+values[5], function(data) {
+							console.log("../php/db_request.php?user_id="+sessvars.name+"&bbc="+values[0]+"&dailymail="+values[1]+"&guardian="+values[2]+"&telegraph="+values[3]
 					+"&sun="+values[4]+"&times="+values[5]);
-		httpGet("../php/db_request.php?user_id=test&bbc="+values[0]+"&dailymail="+values[1]+"&guardian="+values[2]+"&telegraph="+values[3]
-					+"&sun="+values[4]+"&times="+values[5]);
+							if(sessvars.name==="new") {sessvars.name=data; console.log(sessvars.name);}
+		});
 		position="loading";
 		sessvars.comparisons += 1;
 		$("#comparisons").text(sessvars.comparisons + "/5");
@@ -80,6 +84,7 @@ $( "#textbox2" ).click(function() {
 });
 });
 function resetTexts() {
+	values = ["0", "0", "0", "0", "0", "0"];
 	var article = Math.round(Math.random()*2);
 
 	sources[0] = newspapers[Math.round(Math.random()*5)];
@@ -121,7 +126,7 @@ function resetTexts() {
 <div id="container">
   <div id="headline">
 	  <img src="../images/logo.png" width=80px height=80px></img>
-      <h1>Which of these do you agree with?</h1>
+      <h1>Which of these is more fair and accurate?</h1>
 	  <h2 id="comparisons"> 0/5 </h2>
   </div>
   
