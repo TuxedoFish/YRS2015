@@ -1,11 +1,17 @@
 <html>
 <head>
-	<title>Newspaper Discovery</title>
+	<title>Paper Picker</title>
 	<link rel="stylesheet" type="text/css" href="../css/results.css" >
 	<script src="../library/jquery-2.0.3.min.js"></script>
 	<script src="../library/jquery.transit.min.js"></script>
 	<script src = "http://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.js"></script>
 </head>
+<script>
+$(document).ready(function(){
+	$("#newpaper").animate({top: '142px'},"slow");
+});
+
+</script>
 
 <body>
 	<!--contains the website within a box-->
@@ -15,38 +21,67 @@
 				Results
 			</h1>
 		</div>
-		???
-		<div class="icon" id="guardian">
-			<img src="../images/guardian.png">
-			The Guardian
-			<br> 70% of people
+		<div class="icon" id="thesun">
+			<img src="../images/the sun.jpg">
+			 The Sun
+			<div id="sunratings">You rated this
+				<b>1<sup>st</sup></b>
+			 	people generally rated this
+				<b>5<sup>th</sup></b>
+		 	</div>
 		</div>
-
 		<div class="icon" id="bbc">
 			<img src="../images/bbc.png">
-			<br> BBC News
+			 BBC
+			<div id="sunratings">You rated this
+				<b>1<sup>st</sup></b>
+			 	people generally rated this
+				<b>5<sup>th</sup></b>
+		 	</div>
+		</div><div class="icon" id="guardian">
+			<img src="../images/guardian.png">
+			 The Guardian
+			<div id="sunratings">You rated this
+				<b>1<sup>st</sup></b>
+			 	people generally rated this
+				<b>5<sup>th</sup></b>
+		 	</div>
+		</div><div class="icon" id="thetimes">
+			<img src="../images/the times.png">
+			 The Times
+			<div id="sunratings">You rated this
+				<b>1<sup>st</sup></b>
+			 	people generally rated this
+				<b>5<sup>th</sup></b>
+		 	</div>
+		</div><div class="icon" id="dailymail">
+			<img src="../images/daily mail.jpg">
+			 The Daily Mail
+			<div id="sunratings">You rated this
+				<b>1<sup>st</sup></b>
+			 	people generally rated this
+				<b>5<sup>th</sup></b>
+		 	</div>
 		</div>
 		<div class="icon" id="telegraph">
 			<img src="../images/telegraph.jpg">
-			<br> The Telegraph
+			 The Telegraph
+			<div id="sunratings">You rated this
+				<b>1<sup>st</sup></b>
+			 	people generally rated this
+				<b>5<sup>th</sup></b>
+		 	</div>
 		</div>
-		<div class="icon" id="dailymail">
-			<img src="../images/daily mail.jpg">
-			<br> Daily Mail
-		</div>
-		<div class="icon" id="thesun">
-			<img src="../images/the sun.jpg">
-			<br> The Sun
-		</div>
-		<div class="icon" id="thetimes">
+		<div id="newpaper">
 			<img src="../images/the times.png">
-			<br> The Times
+				 Your recommended paper is
 		</div>
+
+		</div>
+
 	</div>
 </body>
 </html>
-		<div id="slider">
 
-		</div>
 	</div>
 </body>

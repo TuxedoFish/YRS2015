@@ -13,66 +13,52 @@ body {
   margin-right: 2%;
   margin-top: 1%;
   border-radius: 25px;
-  width: 10%;
-  height: 27%;
+  width: 15%;
+  height: 35%;
   background: #A7D9D7;
   font-family: Tahoma, Geneva, sans-serif;
   color: #FFFFFF;
   text-align: center;
-  font-size: 100%;
+  font-size: 200%;
   border-style: solid;
   border-width: 3.5px;
   border-color: #85adac;
 }
+.icon:hover {
+	background: #FF7200;
+	border-color: #EE6100;
+}
+.icon:active {
+	background: #FF7200;
+}
+
+#urlbutton {
+	position: absolute;
+	top: 50%;
+	width: 103px;
+	height: 161px;
+}
+.leftbutton { left: 1.5%; background: url("../images/buttonleft1.png"); }
+.leftbutton:hover{ background: url("../images/buttonleft2.png"); }
+.leftbutton:active { background: url("../images/buttonleft3.png"); }
+
+.rightbutton { right: 1.5%; background: url("../images/buttonright1.png"); }
+.rightbutton:hover { background: url("../images/buttonright2.png"); }
+.rightbutton:active { background: url("../images/buttonright3.png"); }
 
 .icon img {
 	padding-top: 5%;
 	display:block;
-  margin:auto;
-	width: 65%;
-	height: 52%;
+    margin:auto;
+	width: 70%;
+	height: 60%;
 }
-
-#thesun {left: 7%; top: 69%;}
-#bbc { left: 22%; top: 69%; }
-#guardian {left: 37%; top: 69%;}
-#thetimes{left: 51%; top: 69%;}
-#dailymail {left: 66%; top: 69%;}
-#telegraph {left: 80%; top: 69%;}
-
-.icon b {
-	color: #FF7200
-}
-
-#newpaper {
-	margin-right: 2%;
-  margin-top: 1%;
-  border-radius: 25px;
-	height: 47%;
-	width: 30%;
-	top: -200px;
-	left :500px;
-  background: #A7D9D7;
-  font-family: Tahoma, Geneva, sans-serif;
-  color: #FFFFFF;
-  text-align: center;
-  font-size: 180%;
-  border-style: solid;
-  border-width: 3.5px;
-  border-color: #85adac;
-	position: absolute;
-
-}
-
-#newpaper img{
-	padding-top: 5%;
-	display:block;
-	margin:auto;
-	width: 60%;
-	height: 70%;
-}
-
-
+#bbc { left: 8%; top: 20%; }
+#guardian {left: 40%; top: 20%;}
+#telegraph {left: 76%; top: 20%;}
+#thesun {left: 8%; top: 61%;}
+#thetimes{left: 40%; top: 61%;}
+#dailymail {left: 76%; top: 61%;}
 
 #headline {
 	position: absolute;
@@ -86,12 +72,10 @@ body {
 	font-size: 100px;
 	text-align: center ;
 	color: #FFFFFF;
-  font-size: 500%;
+  font-size: 425%;
   font-family: Tahoma, Geneva, sans-serif;
 	-webkit-margin-before :0.35em;
 }
-
-
 .entry {
     display:inline-block;
     vertical-align:top;

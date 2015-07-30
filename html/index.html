@@ -9,6 +9,52 @@
 	<script src = "http://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.js"></script>
 </head>
 
+<script>
+sessvars.name = "Thomas";
+
+setIcon(0, "#guardian"); setIcon(1, "#bbc"); setIcon(2, "#telegraph");
+setIcon(3, "#dailymail"); setIcon(4, "#thesun"); setIcon(5, "#thetimes");
+
+if(sessvars.initialised!="initialised") {
+	console.log("init");
+	sessvars.states = ["not clicked", "not clicked", "not clicked",
+				"not clicked", "not clicked", "not clicked"];
+	sessvars.initialised="initialised";
+}
+
+$(document).ready(function() {
+	$( "#guardian" ).click(function() { changeIcon(0, "#guardian") });
+	$( "#bbc" ).click(function() { changeIcon(1, "#bbc") });
+	$( "#telegraph" ).click(function() { changeIcon(2, "#telegraph" )});
+	$( "#dailymail" ).click(function() { changeIcon(3, "#dailymail") });
+	$( "#thesun" ).click(function() { changeIcon(4, "#thesun") });
+	$( "#thetimes" ).click(function() { changeIcon(5, "#thetimes") });
+});
+
+function changeIcon(index, id, shiftleft, shifttop) {
+	if(sessvars.states[index]==="not clicked") {
+		$( id ).attr('style', "box-shadow:2px 2px 10px 10px #85ADAC;"
+								+ "-webkit-box-shadow:2px 2px 10px 10px #85ADAC;"
+								+ "-moz-box-shadow:2px 2px 10px 10px #85ADAC;" +
+								"left:" + shiftleft + "%;top:" + shifttop + "%;");
+		sessvars.states[index]="clicked";
+	} else {
+		$( id ).removeAttr('style');
+		sessvars.states[index]="not clicked";
+	}
+}
+function setIcon(index, id, shiftleft, shifttop) {
+	if(sessvars.states[index]==="clicked") {
+		console.log("thisshouldwork");
+		$( id ).attr('style', "box-shadow:2px 2px 10px 10px #85ADAC;"
+								+ "-webkit-box-shadow:2px 2px 10px 10px #85ADAC;"
+								+ "-moz-box-shadow:2px 2px 10px 10px #85ADAC;" +
+								"left:" + shiftleft + "%;top:" + shifttop + "%;");
+	}
+}
+</script>
+
+
 <body>
 	<!--contains the website within a box-->
 	<div id="container">
@@ -18,14 +64,13 @@
 			</h1>
 			<img src="../images/logo.png" width=80px height=80px></img>
 		</div>
-		
+
 		<a href="comparison.html"><div id="urlbutton" class="rightbutton"></div><a>
-		
+
 		<div class="icon" id="guardian">
 			<img src="../images/guardian.png">
 			<br> The Guardian
 		</div>
-
 		<div class="icon" id="bbc">
 			<img src="../images/bbc.png">
 			<br> BBC News
@@ -50,7 +95,7 @@
 </body>
 </html>
 		<div id="slider">
-			
+
 		</div>
 	</div>
 </body>
@@ -95,7 +140,12 @@ function setIcon(index, id) {
 		console.log("thisshouldwork : " + id);
 		$( id ).attr('style', "box-shadow:2px 2px 10px 10px #85ADAC;"
 								+ "-webkit-box-shadow:2px 2px 10px 10px #85ADAC;"
+<<<<<<< HEAD
+								+ "-moz-box-shadow:2px 2px 10px 10px #85ADAC;");
+	}
+=======
 								+ "-moz-box-shadow:2px 2px 10px 10px #85ADAC; background: #FF7200;");
 	} 
+>>>>>>> origin/master
 }
 </script>
