@@ -9,6 +9,10 @@ $dailymail = $_GET['dailymail'];
 $times = $_GET['times'];
 $sun = $_GET['sun'];
 
+if ($user_id = '') {
+    query_db("INSERT INTO tblUsers(bbc, guardian, telegraph, dailymail, times, sun) VALUES ($bbc, $guardian, $telegraph, $dailymail, $times, $sun)");
+}
+
 query_db("UPDATE tblUsers SET bbc = bbc + " . $bbc . " WHERE user_id='" . $user_id . "'");
 query_db("UPDATE tblUsers SET guardian = guardian + " . $guardian . " WHERE user_id='" . $user_id . "'");
 query_db("UPDATE tblUsers SET telegraph = telegraph + " . $telegraph . " WHERE user_id='" . $user_id . "'");
