@@ -52,7 +52,8 @@ $( "#textbox1" ).click(function() {
 		});
 		sessvars.comparisons += 1;
 		$("#comparisons").text(sessvars.comparisons + "/3");
-		if(sessvars.comparisons==3) {
+		console.log(sessvars.comparisons);
+		if(sessvars.comparisons==2) {
 			window.location.href = "../html/results.html";
 		}
 		resetTexts();
@@ -75,8 +76,9 @@ $( "#textbox2" ).click(function() {
 		});
 		position="loading";
 		sessvars.comparisons += 1;
+		console.log(sessvars.comparisons);
 		$("#comparisons").text(sessvars.comparisons + "/3");
-		if(sessvars.comparisons==3) {
+		if(sessvars.comparisons==2) {
 			window.location.href = "../html/results.html";
 		}
 		resetTexts();
@@ -96,9 +98,10 @@ function resetTexts() {
 		if(sources[1] != sources[0]) { different=true; }
 	}
 	
+	console.log(sessvars.article);
+	
 	getArticle(sessvars.article, sources[0], function(link) {
 		getUrl(link, function(data) {
-			console.log(data);
 			var title = data.objects[0].title;
 			var text = data.objects[0].text;
 			textsentences = text.split(".", 3);
@@ -109,7 +112,6 @@ function resetTexts() {
 	});
 	getArticle(sessvars.article, sources[1], function(link) {
 		getUrl(link, function(data) {
-			console.log(data);
 			var title = data.objects[0].title;
 			var text = data.objects[0].text;
 			textsentences = text.split(".", 3);

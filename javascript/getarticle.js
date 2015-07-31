@@ -16,6 +16,8 @@ function getArticle(number, newspaper, callback) {
 		data: 'json'
 		
 		}).done(function ( data ) {
+			console.log(data);
+			console.log(number + " : " + newspaper);
 			var paper = data.topics[number][newspaper];
 			link = "http://api.diffbot.com/v3/article?token=14bc76d1b7868c3feca9e6be884d5e1c&discussion=false&paging=false&url=".concat(paper);
 			

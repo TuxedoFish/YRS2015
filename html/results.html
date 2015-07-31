@@ -14,12 +14,12 @@ $(document).ready(function(){
 	$("#newpaper").animate({top: '142px'},"slow");
 	
 	getUrl("../php/recommend.php?user_id="+sessvars.name, function(data) {
-		if(data=="bbc") {$("#recommendedimg").attr("src", "../images/bbc.png"); $("#recommended").text("BBC News");}
-		if(data=="sun") {$("#recommendedimg").attr("src", "../images/the sun.jpg"); $("#recommended").text("The Sun");}
-		if(data=="guardian") {$("#recommendedimg").attr("src", "../images/guardian.png"); $("#recommended").text("The Guardian");}
+		if(data=="bbc") {$("#recommendedimg").attr("src", "../images/bbc.png"); $("#recommended").append("BBC News");}
+		if(data=="sun") {$("#recommendedimg").attr("src", "../images/the sun.jpg"); $("#recommended").append("The Sun");}
+		if(data=="guardian") {$("#recommendedimg").attr("src", "../images/guardian.png"); $("#recommended").append("The Guardian");}
 		if(data=="telegraph") {$("#recommendedimg").attr("src", "../images/telegraph.jpg"); $("#recommended").append("The Telegraph");}
-		if(data=="dailymail") {$("#recommendedimg").attr("src", "../images/daily mail.jpg"); $("#recommended").text("The Daily Mail");}
-		if(data=="times") {$("#recommendedimg").attr("src", "../images/the times.png"); $("#recommended").text("The times");}
+		if(data=="dailymail") {$("#recommendedimg").attr("src", "../images/daily mail.jpg"); $("#recommended").append("The Daily Mail");}
+		if(data=="times") {$("#recommendedimg").attr("src", "../images/the times.png"); $("#recommended").append("The times");}
 	});
 	
 	getUrl("../php/userdata.php?user_id="+sessvars.name, function(data) {
@@ -76,6 +76,7 @@ $(document).ready(function(){
 			</h1>
 			<img src="../images/logo.png" width=80px height=80px></img>
 		</div>
+		<a href="comparison.html"><div id="urlbutton" class="leftbutton"></div><a>
 		<div class="icon" id="thesun">
 			<img src="../images/the sun.jpg">
 			 The Sun
