@@ -17,6 +17,8 @@
 <script>
 var position="loading";
 
+var loaded = false;
+
 var newspapers = ["BBC", "daily mail", "the guardian", "telegraph", "the sun", "the times"];
 var values = ["0", "0", "0", "0", "0", "0"];
 var sources = ["unknown", "unknown"];
@@ -26,10 +28,12 @@ if(sessvars.initialised!="initialised") {
 	sessvars.states = ["not clicked", "not clicked", "not clicked",
 				"not clicked", "not clicked", "not clicked"];
 	sessvars.comparisons = 0;
-	sessvars.article=-1;
+	sessvars.article=0;
 	sessvars.initialised="initialised";
 	sessvars.name="new";
 }
+
+$("#comparisons").text(sessvars.comparisons + "/5");
 
 resetTexts();
 
@@ -51,9 +55,9 @@ $( "#textbox1" ).click(function() {
 							if(sessvars.name==="new") {sessvars.name=data; console.log(sessvars.name);}
 		});
 		sessvars.comparisons += 1;
-		$("#comparisons").text(sessvars.comparisons + "/3");
+		$("#comparisons").text(sessvars.comparisons + "/5");
 		console.log(sessvars.comparisons);
-		if(sessvars.comparisons==2) {
+		if(sessvars.comparisons==5) {
 			window.location.href = "../html/results.html";
 		}
 		resetTexts();
@@ -77,8 +81,8 @@ $( "#textbox2" ).click(function() {
 		position="loading";
 		sessvars.comparisons += 1;
 		console.log(sessvars.comparisons);
-		$("#comparisons").text(sessvars.comparisons + "/3");
-		if(sessvars.comparisons==2) {
+		$("#comparisons").text(sessvars.comparisons + "/5");
+		if(sessvars.comparisons==5) {
 			window.location.href = "../html/results.html";
 		}
 		resetTexts();
@@ -87,8 +91,15 @@ $( "#textbox2" ).click(function() {
 });
 function resetTexts() {
 	values = ["0", "0", "0", "0", "0", "0"];
-	sessvars.article += 1;
+	
+	if(loaded==true) {
+		sessvars.article += 1;
+	} else {
+		loaded=true;
+	}
 
+	console.log(sessvars.article);
+	
 	sources[0] = newspapers[Math.round(Math.random()*5)];
 	
 	var different=false;
@@ -98,10 +109,9 @@ function resetTexts() {
 		if(sources[1] != sources[0]) { different=true; }
 	}
 	
-	console.log(sessvars.article);
-	
 	getArticle(sessvars.article, sources[0], function(link) {
 		getUrl(link, function(data) {
+			console.log(link);
 			var title = data.objects[0].title;
 			var text = data.objects[0].text;
 			textsentences = text.split(".", 3);
@@ -112,6 +122,7 @@ function resetTexts() {
 	});
 	getArticle(sessvars.article, sources[1], function(link) {
 		getUrl(link, function(data) {
+			console.log(link);
 			var title = data.objects[0].title;
 			var text = data.objects[0].text;
 			textsentences = text.split(".", 3);
@@ -129,7 +140,7 @@ function resetTexts() {
   <div id="headline">
 	  <img src="../images/logo.png" width=80px height=80px></img>
       <h1>Which of these is more fair and accurate?</h1>
-	  <h2 id="comparisons"> 0/3 </h2>
+	  <h2 id="comparisons"> 0/5 </h2>
   </div>
   
 

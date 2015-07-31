@@ -19,10 +19,11 @@ $(document).ready(function(){
 		if(data=="guardian") {$("#recommendedimg").attr("src", "../images/guardian.png"); $("#recommended").append("The Guardian");}
 		if(data=="telegraph") {$("#recommendedimg").attr("src", "../images/telegraph.jpg"); $("#recommended").append("The Telegraph");}
 		if(data=="dailymail") {$("#recommendedimg").attr("src", "../images/daily mail.jpg"); $("#recommended").append("The Daily Mail");}
-		if(data=="times") {$("#recommendedimg").attr("src", "../images/the times.png"); $("#recommended").append("The times");}
+		if(data=="times") {$("#recommendedimg").attr("src", "../images/the times.png"); $("#recommended").append("The Financial Times");}
 	});
 	
 	getUrl("../php/userdata.php?user_id="+sessvars.name, function(data) {
+		console.log(sessvars.name);
 		var realdata = JSON.parse(data);
 		
 		var positionnames = ["1st", "2nd", "3rd", "4th", "5th", "6th"];
@@ -44,6 +45,7 @@ $(document).ready(function(){
 		console.log(finalpositions);
 	});
 	getUrl("../php/totals.php", function(data) {
+		console.log(data);
 		var realdata = JSON.parse(data);
 		
 		var positionnames = ["1st", "2nd", "3rd", "4th", "5th", "6th"];
@@ -94,7 +96,7 @@ $(document).ready(function(){
 			<div id="guardianratings2"></div>
 		</div><div class="icon" id="thetimes">
 			<img src="../images/the times.png">
-			 The Times
+			 Financial Times
 			<div id="thetimesratings1"></div>
 			<div id="thetimesratings2"></div>
 		</div><div class="icon" id="dailymail">

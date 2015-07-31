@@ -3,7 +3,7 @@
 		"daily mail" :	"http://www.dailymail.co.uk/debate/article-3175533/DOMINIC-LAWSON-peer-thinks-s-Steve-Coogan-dealt-democracy-terrible-blow.html"	,
 		"telegraph" :	"http://www.telegraph.co.uk/news/uknews/law-and-order/11764755/Lord-Sewel-will-not-quit-after-he-is-pictured-in-prostitutes-orange-bra-at-cocaine-sex-party.html"	,
 		"the sun":	"http://www.thesun.co.uk/sol/homepage/news/6563213/Lord-Sewel-bragged-about-sex-with-BBC-star.html"	,
-		"the times" :	"http://www.thetimes.co.uk/tto/news/politics/article4510415.ece"	,
+		"the times" :	"http://www.ft.com/cms/s/0/2cedd026-338e-11e5-bdbb-35e55cbae175.html#axzz3hSlTFp2o"	,
 		"BBC" :	"http://www.bbc.co.uk/news/uk-politics-33685519"	
 		} , {		
 		"topic name" :	"Dirty Cash"	,
@@ -11,7 +11,7 @@
 		"daily mail" :	"http://www.dailymail.co.uk/news/article-3176694/PM-s-crackdown-foreign-criminals-buying-UK-homes-dirty-money-Cameron-announces-clampdown-overseas-buyers-anonymous-companies.html"	,
 		"telegraph" :	"http://www.telegraph.co.uk/news/uknews/crime/11766496/Foreigners-who-launder-dirty-money-in-UK-to-be-named-and-shamed.html"	,
 		"the sun":	"http://www.thesun.co.uk/sol/homepage/news/politics/6563251/Cameron-declares-war-on-foreign-criminals-bagging-London-properties.html"	,
-		"the times" :	"http://www.thetimes.co.uk/tto/news/politics/article4510248.ece"	,
+		"the times" :	"http://www.ft.com/cms/s/0/4d83097a-34ef-11e5-bdbb-35e55cbae175.html#axzz3hSlTFp2o"	,
 		"BBC" :	"http://www.bbc.co.uk/news/uk-politics-33684098"	
 		} , {		
 		"topic name" :	"Gadaffi's son killed"	,
@@ -19,7 +19,23 @@
 		"daily mail" :	"http://www.dailymail.co.uk/news/article-2220949/Colonel-Gaddafis-youngest-son-Khamis-Gaddafi-dies-captured-gun-battle.html"	,
 		"telegraph" :	"http://www.telegraph.co.uk/culture/books/bookreviews/9176632/Unpicking-Gadaffi.html"	,
 		"the sun":	"http://www.thesun.co.uk/sol/homepage/news/3482834/Colonel-Gaddafis-commander-son-is-killed-by-Kamikaze-Libyan-pilot.html"	,
-		"the times" :	"http://www.timesofmalta.com/articles/view/20150728/world/libyan-court-gives-death-sentence-to-gaddafi-son-saif-al-islam.578381"	,
+		"the times" :	"http://www.ft.com/cms/s/0/ca7cdb50-3511-11e5-b05b-b01debd57852.html#axzz3hSlTFp2o"	,
 		"BBC" :	"http://www.bbc.co.uk/news/world-africa-33688391"	
+				} , {		
+		"topic name" :	"Migrant crisis"	,
+		"the guardian" :	"http://www.theguardian.com/uk-news/2015/jul/30/calais-crisis-its-easier-to-leave-us-living-like-this-if-you-say-we-are-bad-people"	,
+		"daily mail" :	"http://www.dailymail.co.uk/news/article-3179324/Why-French-blame-migrant-crisis-LEO-MCKINSTRY-says-Prime-Minister-wrong-point-fingers-directly-France-disaster-unfolds-soil.html"	,
+		"telegraph" :	"http://www.telegraph.co.uk/news/uknews/immigration/11774895/Calais-illigal-immigrants-crisis-Army-on-standby-live.html"	,
+		"the sun":	"http://www.thesun.co.uk/sol/homepage/news/6566514/Scandal-of-Calais-security-shambles.html"	,
+		"the times" :	"http://www.ft.com/cms/s/0/7adeee82-35be-11e5-bdbb-35e55cbae175.html#axzz3hSlTFp2o"	,
+		"BBC" :	"http://www.bbc.co.uk/news/uk-33729024"	
+				}  , {		
+		"topic name" :	"Nhs reform lords defeat"	,
+		"the guardian" :	"http://www.theguardian.com/healthcare-network/2015/jul/31/government-defeat-limits-nhs-devolution"	,
+		"daily mail" :	"http://www.dailymail.co.uk/news/article-201601/Reid-slams-Lords-NHS-defeat.html"	,
+		"telegraph" :	"http://www.telegraph.co.uk/news/politics/8822728/NHS-reform-Bill-survives-fatal-Lords-vote.html"	,
+		"the sun":	"http://www.thesun.co.uk/sol/homepage/news/politics/4158903/Change-in-the-NHS-will-be-good-for-patients-think-tank-claims.html"	,
+		"the times" :	"http://www.ft.com/cms/s/0/54213f6a-5274-11e1-ae2c-00144feabdc0.html#axzz3hSlTFp2o"	,
+		"BBC" :	"http://www.bbc.co.uk/news/uk-politics-33617879"	
 				}]
 				}
